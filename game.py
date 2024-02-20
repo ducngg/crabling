@@ -80,6 +80,8 @@ class Game:
             self.player = Bot("BOT", money=p_money, quiet=self.pquiet)
             if 'clever' in kwargs:
                 self.player = CleverBot("CBOT", money=p_money, quiet=self.pquiet)
+            elif 'not_so_clever' in kwargs:
+                self.player = NotSoCleverBot("CBOT", money=p_money, quiet=self.pquiet)
 
         else:
             self.quiet = False

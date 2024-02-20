@@ -154,7 +154,7 @@ class Bot(Player):
         n = np.random.choice(ns, p=ws)
         return n
 
-    def random_choice(self, low=20, high=40, ws=[1/6, 1/6, 1/6, 1/6, 1/6, 1/6]):
+    def random_choice(self, low=10, high=30, ws=[1/6, 1/6, 1/6, 1/6, 1/6, 1/6]):
         money = np.random.randint(low, high)
         
         cell = np.random.choice(CELLS, p=ws)
@@ -235,3 +235,37 @@ class CleverBot(Bot):
                 else:
                     ws[i] = ws[i] + delta/5 
         return ws
+
+
+class NotSoCleverBot(CleverBot):
+    """
+    This bot will bet n times on a random cell(may bet on the same cell multiple times, and the money in that tile will add up). 
+    But it can look back the history and increase the probability of choosing the cells that just appeared recently.
+    - reweight(cell, occurence) will increase the probability of choosing the cell based on the occurence of it in recent rounds.
+    """
+    def __init__(self, name="", money=10000, *args, **kwargs) -> None:
+        super().__init__(name, money, *args, **kwargs)
+        
+    def reweight(self, ws, index, occurence):
+        """
+        This will increase the probability of choosing a cell by X% based on the occurence, then normalize the weight vector.
+        """
+        if occurence == 0:
+            pass
+        
+        elif occurence == 1:
+            incr = 0.3
+            ws[index] += ws[index] * incr
+        
+        elif occurence == 2:
+            incr = 0.6
+            ws[index] += ws[index] * incr
+            
+        elif occurence == 3:
+            incr = 0.9
+            ws[index] += ws[index] * incr
+            
+        # Normalize
+        sum_ws = sum(ws)
+        return [w/sum_ws for w in ws]
+

@@ -31,7 +31,41 @@ In general, the dealer has an average profit of 7.9% of the betting money from p
 
 I conducted experiments to investigate whether there are effective betting strategies that increase the chances of winning in the game.
 
-### Usage
+There will be 3 strategies:
+- Random bet.
+```python
+class Bot
+```
+- More likely to bet on the symbols that are not appeared recently.
+```python
+class CleverBot
+```
+- More likely to bet on the symbols that are appeared recently.
+```python
+class NotSoCleverBot
+```
+
+### Experiment settings:
+```json
+{
+    "n_games": 3000,
+    "initial_money": 1000,
+    "each_bet": randint(10, 30),
+    // Other setting values are specified in the code
+}
+```
+I will evaluate the performance based on the number of rounds survived by the bots before running out of money. Future iterations of this experiment will incorporate additional metrics to assess the level of "cleverness" exhibited by the bots. Below are the results:
+
+
+| Bot | Rounds Survived<br>(fair dice) | Rounds Survived<br>(unfair dice) |
+| - | - | - |
+| Bot | 383 ± 216   | ±  | 
+| Clever Bot | 389 ± 223    | ±   | 
+| Not so clever Bot | 386 ± 225     | ±  | 
+
+### Result:
+
+## Usage
 
 #### Normal Game (Manual Play)
 
