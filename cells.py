@@ -7,7 +7,7 @@ HUOU = "huou"
 # Gourd
 BAU = "bau"
 
-# Chicken
+# Rooster
 GA = "ga"
 
 # Fish
