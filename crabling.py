@@ -40,7 +40,7 @@ if __name__ == '__main__':
     for i in range(n):
         print(f"\rBot: {i+1}/{n}", end='')
         start_time = time.time()
-        game = Game(p_money=1000, b_money=1000, bot=True, fast=True, code=code)
+        game = Game(p_money=500, b_money=1000, bot=True, fast=True, code=code)
         history = game.play()
         end_time = time.time()
         bot_records.append((len(history), end_time-start_time))
@@ -49,7 +49,7 @@ if __name__ == '__main__':
     for i in range(n):
         print(f"\rClever Bot: {i+1}/{n}", end='')
         start_time = time.time()
-        game = Game(p_money=1000, b_money=10000, bot=True, fast=True, clever=True, code=code)
+        game = Game(p_money=500, b_money=10000, bot=True, fast=True, clever=True, code=code)
         history = game.play()
         end_time = time.time()
         clever_bot_records.append((len(history), end_time-start_time))
@@ -59,7 +59,7 @@ if __name__ == '__main__':
     for i in range(n):
         print(f"\rNot So Clever Bot: {i+1}/{n}", end='')
         start_time = time.time()
-        game = Game(p_money=1000, b_money=10000, bot=True, fast=True, not_so_clever=True, code=code)
+        game = Game(p_money=500, b_money=10000, bot=True, fast=True, not_so_clever=True, code=code)
         history = game.play()
         end_time = time.time()
         not_so_clever_bot_records.append((len(history), end_time-start_time))

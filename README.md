@@ -48,22 +48,22 @@ class NotSoCleverBot
 ### Experiment settings:
 ```json
 {
-    "n_games": 3000,
-    "initial_money": 1000,
+    "n_games": 500,
+    "initial_money": 500,
     "each_bet": randint(10, 30),
     // Other setting values are specified in the code
 }
 ```
-I will evaluate the performance based on the number of rounds survived by the bots before running out of money. Future iterations of this experiment will incorporate additional metrics to assess the level of "cleverness" exhibited by the bots. Below are the results:
+### Result:
 
+I will evaluate the performance based on the number of rounds survived by the bots before running out of money. Future iterations of this experiment will incorporate additional metrics to assess the level of "cleverness" exhibited by the bots. Below are the results:
 
 | Bot | Rounds Survived<br>(fair dice) | Rounds Survived<br>(unfair dice) |
 | - | - | - |
-| Bot | 383 ± 216   | ±  | 
-| Clever Bot | 389 ± 223    | ±   | 
-| Not so clever Bot | 386 ± 225     | ±  | 
+| Bot | 185 ± 147 | 167 ± 133 | 
+| Clever Bot | 189 ± 158 | 5208 ± 2848 | 
+| Not so clever Bot | 193 ± 155 | 124 ± 87 | 
 
-### Result:
 
 ## Usage
 
